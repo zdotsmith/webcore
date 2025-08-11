@@ -1,0 +1,24 @@
+---
+// src/layouts/BaseLayout.astro
+import NavBar from "../components/svelte/NavBar.svelte";
+
+const { title = "3D Studio", description = "3D animation and 3D web experiences" } = Astro.props;
+---
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <NavBar client:load />
+    <main class="container mx-auto px-4">
+      <slot />
+    </main>
+    <footer class="border-t mt-16 py-8 text-sm text-center">
+      © {new Date().getFullYear()} Your Name · Built with Astro + Svelte
+    </footer>
+  </body>
+</html>
