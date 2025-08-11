@@ -1,17 +1,19 @@
 <!-- src/components/svelte/NavBar.svelte -->
 <script>
-  import { Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from 'flowbite-svelte';
+  import { Navbar, NavBrand, NavHamburger, NavUl, NavLi } from 'flowbite-svelte';
 </script>
 
 <Navbar class="border-b bg-white/70 backdrop-blur dark:bg-gray-900/70">
-  <NavbarBrand href="/" class="text-xl font-bold">
+  <NavBrand href="/" class="text-xl font-bold">
     <span class="text-brand">3D</span> Studio
-  </NavbarBrand>
-  <NavbarToggle />
-  <NavbarCollapse>
-    <NavbarLink href="/#services">Services</NavbarLink>
-    <NavbarLink href="/#portfolio">Portfolio</NavbarLink>
-    <NavbarLink href="/blog">Blog</NavbarLink>
-    <NavbarLink href="/#contact">Contact</NavbarLink>
-  </NavbarCollapse>
+  </NavBrand>
+
+  <NavHamburger />
+
+  <NavUl class="ml-auto">
+    <NavLi href="/#services">Services</NavLi>
+    <NavLi href="/#portfolio">Portfolio</NavLi>
+    <NavLi href="/blog">Blog</NavLi>
+    <NavLi href="/#contact">Contact</NavLi>
+  </NavUl>
 </Navbar>

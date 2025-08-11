@@ -1,6 +1,6 @@
 <!-- src/components/svelte/ContactForm.svelte -->
 <script>
-  import { Label, TextInput, Textarea, Button } from 'flowbite-svelte';
+  import { Label, Input, Textarea, Button } from 'flowbite-svelte';
   let sending = false;
   let success = '';
   let error = '';
@@ -30,22 +30,21 @@
 </script>
 
 <form class="space-y-4 max-w-xl" on:submit={handleSubmit}>
-  <!-- Get a free key at https://web3forms.com/ and paste it below -->
   <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_WEB3FORMS_KEY" />
 
   <div>
     <Label for="name" class="mb-2 block">Name</Label>
-    <TextInput id="name" name="name" required placeholder="Your name" />
+    <Input id="name" name="name" required placeholder="Your name" />
   </div>
 
   <div>
     <Label for="email" class="mb-2 block">Email</Label>
-    <TextInput id="email" type="email" name="email" required placeholder="you@example.com" />
+    <Input id="email" type="email" name="email" required placeholder="you@example.com" />
   </div>
 
   <div>
     <Label for="message" class="mb-2 block">Project details</Label>
-    <Textarea id="message" name="message" rows="5" placeholder="Tell me about your 3D animation/web project" />
+    <Textarea id="message" name="message" rows="5" placeholder="Tell me about your 3D project" />
   </div>
 
   <Button class="w-full" type="submit" disabled={sending}>
